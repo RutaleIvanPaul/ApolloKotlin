@@ -1,0 +1,14 @@
+query Launches($after: String) {
+  launches(after: $after) {
+    cursor
+    hasMore
+    launches {
+      id
+      site
+      mission {
+        missionPatch(size: SMALL)
+        name
+      }
+    }
+  }
+}
